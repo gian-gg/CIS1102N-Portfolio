@@ -1,8 +1,7 @@
-# React + Vite
+## Project Overview
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project fulfills a requirement for the CIS1102N course, compiling all notes and resources into a centralized documentation website. Designed with modern principles, it aims to provide clear navigation and accessibility for users.
 
-Currently, two official plugins are available:
+## Tech Stack
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+[![TECH](https://skillicons.dev/icons?i=react,nodejs,vite,tailwind)](https://skillicons.dev)
