@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { Link } from "react-router-dom";
+
 import ButtonContainer from "../components/ButtonContainer";
 
 import BG from "../assets/images/bg/home.png";
@@ -18,7 +20,7 @@ const DisplaySubheading = ({ text, rotation, x }) => {
       className={`text-light font-gochiHand text-3xl md:text-4xl lg:text-5xl opacity-40 ${
         rotation == "right"
           ? "rotate-3 -translate-x-20 md:-translate-x-40 lg:-translate-x-60"
-          : "-rotate-6 translate-x-20 md:translate-x-40 lg:translate-x-60"
+          : "-rotate-3 translate-x-28 md:translate-x-40 lg:translate-x-60"
       }`}
     >
       {text}
@@ -41,7 +43,7 @@ export default function App() {
 
   return (
     <div
-      className="bg-dark w-screen h-screen pt-4 flex flex-col items-center"
+      className="bg-dark w-screen h-screen pt-4 flex flex-col items-center overflow-hidden"
       style={{
         backgroundImage: `url(${BG})`,
         backgroundSize: "cover",
@@ -49,7 +51,7 @@ export default function App() {
       }}
     >
       <div className="w-screen max-w-[1510px]">
-        <header className="w-full px-8 md:px-20 lg:px-40 flex justify-between">
+        <header className="w-full px-4 md:px-20 lg:px-40 flex justify-between">
           <ButtonContainer className="w-[11.5rem] h-[3rem] md:w-[14rem] md:h-[3.375rem] lg:w-[16.5rem] lg:h-[3.75rem]">
             <div className="p-2 flex justify-center gap-3">
               <img
@@ -75,8 +77,12 @@ export default function App() {
             </button>
             <div className="w-1 h-3/5 bg-gray rounded-full" />
             <div className="text-light flex gap-2 lg:gap-3 text-2xl lg:text-3xl">
-              <FaGithub />
-              <FaFacebook />
+              <Link to="https://github.com/gian-gg" target="_blank">
+                <FaGithub />
+              </Link>
+              <Link to="https://www.facebook.com/epanto.gg/" target="_blank">
+                <FaFacebook />
+              </Link>
             </div>
           </ButtonContainer>
         </header>
@@ -84,6 +90,7 @@ export default function App() {
         <div className="text-center mt-20">
           <DisplaySubheading text="a compilation of" rotation="right" />
           <h1 className="font-pixelifySans text-[96px] md:text-[158px] lg:text-[220px] font-extrabold text-purpleD leading-[5rem] md:leading-[8rem] lg:leading-[10rem] [text-shadow:_0_0px_256px_#CCC2DC]">
+            {/* // https://pagedone.io/docs/text-shadow */}
             CIS1102N
           </h1>
           <DisplaySubheading text="portfolios." rotation="left" />
