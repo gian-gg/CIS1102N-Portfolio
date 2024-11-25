@@ -1,6 +1,10 @@
-const ButtonContainer = () => {
+const ButtonContainer = ({ children, className }) => {
   return (
-    <div className="w-40 h-16 bg-darkSecondary rounded-full drop-shadow-lg shadow-inner"></div>
+    <div
+      className={`bg-darkSecondary rounded-full drop-shadow-lg shadow-inner ${className}`}
+    >
+      {children}
+    </div>
   );
 };
 
