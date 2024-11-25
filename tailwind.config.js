@@ -18,6 +18,9 @@ export default {
         gochiHand: ["Gochi Hand", "cursive"],
         pixelifySans: ["Pixelify Sans", "sans-serif"],
       },
+      screens: {
+        homeLG: "1503px",
+      },
     },
   },
 

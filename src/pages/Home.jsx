@@ -9,12 +9,31 @@ import icon from "../assets/images/logo.png";
 
 import { FaGithub } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa";
+import { FaAngleRight } from "react-icons/fa6";
 
-const PortfolioContainer = ({ title }) => {
-  return <div className="">{title}</div>;
+const GithubLink = "https://github.com/gian-gg";
+const FacebookLink = "https://www.facebook.com/epanto.gg/";
+
+const PortfolioContainer = ({ title, to, number }) => {
+  return (
+    <Link
+      to={to}
+      className="w-full homeLG:w-[12rem] h-16 homeLG:h-[12.6rem] rounded-3xl bg-dark border-4 border-gray homeLG:block translate-x-0 p-2 homeLG:p-4 flex gap-3 justify-between"
+    >
+      <h1 className="text-purpleD font-pixelifySans text-3xl font-extrabold">
+        [{number}]
+      </h1>
+      <h2 className="homeLG:absolute homeLG:bottom-4 text-light font-pixelifySans text-homeLG md:text-2xl font-bold w-4/5 flex align-middle items-center">
+        {title}
+      </h2>
+      <div className="homeLG:absolute homeLG:right-4 homeLG:top-4 text-light text-3xl w-10 h-10 rounded-full bg-gray flex items-center justify-center">
+        <FaAngleRight />
+      </div>
+    </Link>
+  );
 };
 
-const DisplaySubheading = ({ text, rotation, x }) => {
+const DisplaySubheading = ({ text, rotation }) => {
   return (
     <p
       className={`text-light font-gochiHand text-3xl md:text-4xl lg:text-5xl opacity-40 ${
@@ -43,15 +62,15 @@ export default function App() {
 
   return (
     <div
-      className="bg-dark w-screen h-screen pt-4 flex flex-col items-center overflow-hidden"
+      className="bg-dark w-screen h-screen pt-4 flex flex-col items-center overflow-x-hidden"
       style={{
         backgroundImage: `url(${BG})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
     >
-      <div className="w-screen max-w-[1510px]">
-        <header className="w-full px-4 md:px-20 lg:px-40 flex justify-between">
+      <div className="w-screen max-w-[1510px] px-4 md:px-20 lg:px-40">
+        <header className="w-full flex justify-between">
           <ButtonContainer className="w-[11.5rem] h-[3rem] md:w-[14rem] md:h-[3.375rem] lg:w-[16.5rem] lg:h-[3.75rem]">
             <div className="p-2 flex justify-center gap-3">
               <img
@@ -77,26 +96,61 @@ export default function App() {
             </button>
             <div className="w-1 h-3/5 bg-gray rounded-full" />
             <div className="text-light flex gap-2 lg:gap-3 text-2xl lg:text-3xl">
-              <Link to="https://github.com/gian-gg" target="_blank">
+              <Link to={GithubLink} target="_blank">
                 <FaGithub />
               </Link>
-              <Link to="https://www.facebook.com/epanto.gg/" target="_blank">
+              <Link to={FacebookLink} target="_blank">
                 <FaFacebook />
               </Link>
             </div>
           </ButtonContainer>
         </header>
 
-        <div className="text-center mt-20">
+        <div className="text-center mt-16">
           <DisplaySubheading text="a compilation of" rotation="right" />
-          <h1 className="font-pixelifySans text-[96px] md:text-[158px] lg:text-[220px] font-extrabold text-purpleD leading-[5rem] md:leading-[8rem] lg:leading-[10rem] [text-shadow:_0_0px_256px_#CCC2DC]">
+          <h1 className="font-pixelifySans text-[90px] md:text-[158px] lg:text-[220px] font-extrabold text-purpleD leading-[5rem] md:leading-[8rem] lg:leading-[10rem] [text-shadow:_0_0px_256px_#CCC2DC]">
             {/* // https://pagedone.io/docs/text-shadow */}
             CIS1102N
           </h1>
           <DisplaySubheading text="portfolios." rotation="left" />
         </div>
 
-        <div className=""></div>
+        <div className="flex gap-4 mt-10 flex-col homeLG:flex-row">
+          <PortfolioContainer
+            title="COMPUTER SCIENCE AS A DISCIPLINE."
+            number="1"
+          />
+          <PortfolioContainer
+            title="DATA INFORMATION & INFO SYSTEMS."
+            number="2"
+          />
+          <PortfolioContainer title="NUMBER SYSTEMS." number="3" />
+          <PortfolioContainer
+            title="COMPUTER HARDWARE & SOFTWARE."
+            number="4"
+          />
+          <PortfolioContainer
+            title="DIFFERENT TYPES OF MOTHER BOARDS."
+            number="5"
+          />
+          <PortfolioContainer
+            title="DIFFERENT TYPES OF MOTHER COMPUTERS."
+            number="6"
+          />
+        </div>
+
+        <div className="flex flex-col justify-center align-middle items-center mt-20 gap-2 mb-10">
+          <div className="w-full lg:w-4/5 h-1 rounded-full bg-gray" />
+          <h1 className="text-purpleD font-jetbrainsMono text-sm lg:text-lg text-center">
+            Geri Gian C. Epanto | BS Computer Science - 1 | CIS1102N (G6)
+          </h1>
+          <p className="font-gochiHand text-light opacity-60 text-lg lg:text-xl text-center">
+            Copyright © 2024,{" "}
+            <Link to={GithubLink} target="_blank">
+              gian.gg
+            </Link>
+          </p>
+        </div>
       </div>
     </div>
   );
