@@ -50,6 +50,7 @@ export default function App() {
   const [isDarkTheme, setisDarkTheme] = useState(true);
 
   useEffect(() => {
+    document.title = `CIS1102N | Home`;
     document.documentElement.classList.add("dark");
   }, []);
 
@@ -64,16 +65,11 @@ export default function App() {
   };
 
   return (
-    <div
-      className="bg-light dark:bg-dark w-screen h-screen pt-4 flex flex-col items-center overflow-x-hidden bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-cover bg-center"
-      // style={{
-      //   backgroundImage: `url(${BG})`,
-      //   backgroundSize: "cover",
-      //   backgroundPosition: "center",
-      // }}
-    >
+    <div className="bg-light dark:bg-dark w-screen h-screen pt-4 flex flex-col items-center overflow-x-hidden bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-cover bg-center">
       <div className="w-screen max-w-[1510px] px-4 md:px-20 lg:px-40">
+        {/* NAVBAR */}
         <header className="w-full flex justify-between">
+          {/* ICON AND NAME */}
           <ButtonContainer className="w-[11.5rem] h-[3rem] md:w-[14rem] md:h-[3.375rem] lg:w-[16.5rem] lg:h-[3.75rem]">
             <div className="p-2 flex justify-center gap-3">
               <img
@@ -86,6 +82,7 @@ export default function App() {
               </p>
             </div>
           </ButtonContainer>
+          {/* OPTIONS */}
           <ButtonContainer className="w-[9rem] h-[3rem] md:w-[10.5rem] md:h-[3.4rem] lg:w-[12rem] lg:h-[3.8rem] flex items-center justify-center gap-3">
             <button
               onClick={toggleTheme}
@@ -109,6 +106,7 @@ export default function App() {
           </ButtonContainer>
         </header>
 
+        {/* HERO */}
         <div className="text-center mt-16">
           <DisplaySubheading text="a compilation of" rotation="right" />
           <h1 className="font-pixelifySans text-[90px] md:text-[158px] lg:text-[220px] font-extrabold text-purpleL dark:text-purpleD leading-[5rem] md:leading-[8rem] lg:leading-[10rem] [text-shadow:_0_0px_256px_#A191B9]  dark:[text-shadow:_0_0px_256px_#CCC2DC]">
@@ -118,30 +116,37 @@ export default function App() {
           <DisplaySubheading text="portfolios." rotation="left" />
         </div>
 
+        {/* PORTFOLIO BUTTONS */}
         <div className="flex gap-4 mt-10 flex-col homeLG:flex-row">
           <PortfolioContainer
             title="COMPUTER SCIENCE AS A DISCIPLINE."
             number="1"
+            to="/1"
           />
           <PortfolioContainer
             title="DATA INFORMATION & INFO SYSTEMS."
             number="2"
+            to="/2"
           />
-          <PortfolioContainer title="NUMBER SYSTEMS." number="3" />
+          <PortfolioContainer title="NUMBER SYSTEMS." number="3" to="/3" />
           <PortfolioContainer
             title="COMPUTER HARDWARE & SOFTWARE."
             number="4"
+            to="/4"
           />
           <PortfolioContainer
             title="DIFFERENT TYPES OF MOTHER BOARDS."
             number="5"
+            to="/5"
           />
           <PortfolioContainer
             title="DIFFERENT TYPES OF MOTHER COMPUTERS."
             number="6"
+            to="/6"
           />
         </div>
 
+        {/* FOOTER */}
         <div className="flex flex-col justify-center align-middle items-center mt-20 gap-2 mb-10">
           <div className="w-full lg:w-4/5 h-1 rounded-full bg-gray dark:opacity-100 opacity-20" />
           <h1 className="text-purpleL dark:text-purpleD font-jetbrainsMono text-sm lg:text-lg text-center">

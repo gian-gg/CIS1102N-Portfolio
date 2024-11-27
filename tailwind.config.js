@@ -19,7 +19,7 @@ export default {
         pixelifySans: ["Pixelify Sans", "sans-serif"],
       },
       screens: {
-        homeLG: "1503px",
+        homeLG: "1480px",
       },
     },
   },
