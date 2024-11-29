@@ -23,7 +23,7 @@ const About = () => {
               data-aos="fade-right"
               data-aos-delay={300}
             >
-              Geri Gian C. Epanto
+              <span className="line-through">Geri</span> Gian C. Epanto
             </h1>
             <p data-aos="fade-in" data-aos-delay={500}>
               "reprehenderit officia nostrud pariatur anim aliquip mollit
