@@ -28,8 +28,10 @@ const NavBar = () => {
   const toggleTheme = () => {
     if (isDarkTheme) {
       document.documentElement.classList.remove("dark");
+      document.documentElement.classList.add("light");
       setisDarkTheme(false);
     } else {
+      document.documentElement.classList.remove("light");
       document.documentElement.classList.add("dark");
       setisDarkTheme(true);
     }

@@ -35,7 +35,7 @@ const Portfolio = () => {
       <div className="pt-4 flex flex-col items-center"></div>
       <NavBar />
 
-      <div className="w-screen max-w-[1510px] pt-8 px-4 md:px-20 lg:px-40"></div>
+      <div className="w-screen max-w-[1510px] pt-40 px-4 md:px-20 lg:px-40"></div>
       {/* <div className="markdown-container p-4 bg-gray-100 rounded-md shadow-lg">
         <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
       </div> */}
