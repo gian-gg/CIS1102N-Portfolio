@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
@@ -14,6 +14,16 @@ const FacebookLink = "https://www.facebook.com/epanto.gg/";
 
 const NavBar = () => {
   const [isDarkTheme, setisDarkTheme] = useState(true);
+
+  console.log("NAVBAR RENDERED");
+
+  useEffect(() => {
+    if (document.documentElement.classList[0] == "dark") {
+      setisDarkTheme(true);
+    } else {
+      setisDarkTheme(false);
+    }
+  }, []);
 
   const toggleTheme = () => {
     if (isDarkTheme) {

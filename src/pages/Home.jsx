@@ -11,7 +11,9 @@ import Footer from "../components/Footer";
 export default function App() {
   useEffect(() => {
     document.title = `CIS1102N | Home`;
-    document.documentElement.classList.add("dark");
+    if (document.documentElement.classList[0] != "dark") {
+      document.documentElement.classList.add("dark");
+    }
   }, []);
 
   return (
