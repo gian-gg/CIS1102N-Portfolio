@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 
 import "../assets/md.css";
 import NavBar from "../components/NavBar";
+import Footer from "../components/Footer";
 
 const Portfolio = () => {
   const { number } = useParams();
@@ -31,14 +32,33 @@ const Portfolio = () => {
   }, [number]);
 
   return (
-    <div className="w-screen h-screen bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center">
-      <div className="pt-4 flex flex-col items-center"></div>
-      <NavBar />
+    <div className="w-full h-full bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center ">
+      <div className="pt-4 flex flex-col items-center">
+        {/* NAVBAR */}
+        <NavBar />
 
-      <div className="w-screen max-w-[1510px] pt-40 px-4 md:px-20 lg:px-40"></div>
-      {/* <div className="markdown-container p-4 bg-gray-100 rounded-md shadow-lg">
-        <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
-      </div> */}
+        <div className="w-screen max-w-[1510px] min-h-screen pt-20 px-4 md:px-20 lg:px-40">
+          <div className="markdown-container px-10 pb-10">
+            <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
+          </div>
+          <div className="buttons flex justify-center my-8 gap-16">
+            <Link
+              to={`/${parseInt(number) - 1}`}
+              className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
+            >
+              {"<"}
+            </Link>
+            <Link
+              to={`/${parseInt(number) + 1}`}
+              className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
+            >
+              {">"}
+            </Link>
+          </div>
+          {/* FOOTER */}
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 };
