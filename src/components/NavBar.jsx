@@ -29,7 +29,11 @@ const NavBar = () => {
     }
   };
   return (
-    <header className="fixed w-full flex justify-between z-10 px-4 md:px-20 lg:px-40">
+    <header
+      className="fixed w-full flex justify-between z-10 px-4 md:px-20 lg:px-40"
+      data-aos="fade-down"
+      data-aos-delay={300}
+    >
       {/* ICON AND NAME */}
       <LinkScroll
         to="about"

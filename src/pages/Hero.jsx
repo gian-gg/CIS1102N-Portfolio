@@ -1,9 +1,11 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const PortfolioContainer = ({ title, to, number }) => {
+const PortfolioContainer = ({ title, to, number, delay }) => {
   return (
     <Link
+      data-aos="fade-right"
+      data-aos-delay={delay}
       to={to}
       className="w-full homeLG:w-[12rem] h-16 homeLG:h-[12.6rem] rounded-3xl bg-light dark:bg-dark border-4 border-[#B9B9B9] dark:border-gray homeLG:block translate-x-0 p-2 homeLG:p-4 flex gap-3 justify-between"
     >
@@ -71,7 +73,11 @@ const Hero = () => {
   return (
     <div>
       {/* HERO */}
-      <div className="text-center mt-16 flex flex-col justify-center align-middle items-center">
+      <div
+        className="text-center mt-16 flex flex-col justify-center align-middle items-center"
+        data-aos="flip-right"
+        data-aos-delay={600}
+      >
         <DisplaySubheading text="a compilation of" rotation="right" />
         <h1 className="font-pixelifySans text-[90px] md:text-[158px] lg:text-[220px] font-extrabold text-purpleL dark:text-purpleD leading-[5rem] md:leading-[8rem] lg:leading-[10rem] [text-shadow:_0_0px_256px_#A191B9]  dark:[text-shadow:_0_0px_256px_#CCC2DC]">
           {/* // https://pagedone.io/docs/text-shadow */}
@@ -89,6 +95,7 @@ const Hero = () => {
               number={index + 1}
               to={`/${index + 1}`}
               key={index}
+              delay={index * 200}
             />
           ))
         ) : (
