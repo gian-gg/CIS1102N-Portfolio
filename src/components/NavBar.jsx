@@ -1,16 +1,8 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
-import { FaGithub } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa";
-
 import ButtonContainer from "./ButtonContainer";
-
-import icon from "../assets/images/logo.png";
-
-const GithubLink = "https://github.com/gian-gg";
-const FacebookLink = "https://www.facebook.com/epanto.gg/";
+import SocialLinks from "./SocialLinks";
 
 const NavBar = () => {
   const [isDarkTheme, setisDarkTheme] = useState(true);
@@ -48,7 +40,7 @@ const NavBar = () => {
         <ButtonContainer className="w-[11.5rem] h-[3rem] md:w-[14rem] md:h-[3.375rem] lg:w-[16.5rem] lg:h-[3.75rem]">
           <div className="p-2 flex justify-center gap-3">
             <img
-              src={icon}
+              src="./logo.png"
               alt="icon"
               className="w-[2.25rem] md:w-[2.5rem] lg:w-[2.75rem]"
             />
@@ -71,14 +63,7 @@ const NavBar = () => {
           />
         </button>
         <div className="w-1 h-3/5 bg-gray dark:opacity-100 opacity-20 rounded-full" />
-        <div className="text-dark dark:text-light flex gap-2 lg:gap-3 text-2xl lg:text-3xl">
-          <Link to={GithubLink} target="_blank">
-            <FaGithub />
-          </Link>
-          <Link to={FacebookLink} target="_blank">
-            <FaFacebook />
-          </Link>
-        </div>
+        <SocialLinks />
       </ButtonContainer>
     </header>
   );
