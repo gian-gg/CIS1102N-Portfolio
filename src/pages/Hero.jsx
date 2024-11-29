@@ -1,13 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const PortfolioContainer = ({ title, to, number, delay }) => {
+const PortfolioContainer = ({ title, to, number }) => {
+  // AOS vs Hover Animations TRADE-OFF 💔💔
   return (
     <Link
-      data-aos="fade-right"
-      data-aos-delay={delay}
       to={to}
-      className="w-full homeLG:w-[12rem] h-16 homeLG:h-[12.6rem] rounded-3xl bg-light dark:bg-dark border-4 border-[#B9B9B9] dark:border-gray homeLG:block translate-x-0 p-2 homeLG:p-4 flex gap-3 justify-between"
+      className="w-full homeLG:w-[12rem] h-16 homeLG:h-[12.6rem] rounded-3xl bg-light dark:bg-dark border-4 border-[#B9B9B9] dark:border-gray homeLG:block translate-x-0 p-2 homeLG:p-4 flex gap-3 justify-between hover:scale-110 homeLG:hover:-translate-y-2 transition ease-in-out animate-fade-up"
     >
       <h1 className="text-purpleL dark:text-purpleD font-pixelifySans text-3xl font-extrabold">
         [{number}]
@@ -95,7 +94,7 @@ const Hero = () => {
               number={index + 1}
               to={`/${index + 1}`}
               key={index}
-              delay={index * 200}
+              // delay={index * 200}
             />
           ))
         ) : (

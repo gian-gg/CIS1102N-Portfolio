@@ -11,7 +11,7 @@ const Footer = () => {
       </h1>
       <p className="font-gochiHand text-dark dark:text-light opacity-60 text-lg lg:text-xl text-center">
         Copyright © 2024,{" "}
-        <Link to={GithubLink} target="_blank">
+        <Link to={GithubLink} target="_blank" className="animate-pulse">
           gian.gg
         </Link>
       </p>

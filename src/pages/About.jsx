@@ -2,7 +2,12 @@ import SocialLinks from "../components/SocialLinks";
 
 const About = () => {
   return (
-    <div className="w-full h-full" data-aos="fade-up" data-aos-delay={200}>
+    <div
+      className="w-full h-full"
+      data-aos="fade-up"
+      data-aos-delay={200}
+      data-aos-offset={200}
+    >
       <div className="w-full h-full bg-light dark:bg-dark rounded-2xl border-4 border-gray border-opacity-30 dark:border-opacity-100 flex p-8 md:gap-10 gap-2 items-center xl:flex-row flex-col">
         <img
           src="./profile.png"
@@ -14,7 +19,7 @@ const About = () => {
         <div className="h-full text-dark dark:text-light flex flex-col gap-4 font-jetbrainsMono text-sm md:text-base">
           <div>
             <h1
-              className="font-pixelifySans font-semibold text-4xl md:text-6xl text-purpleL dark:text-purpleD"
+              className="font-gochiHand font-semibold text-4xl md:text-6xl text-purpleL dark:text-purpleD"
               data-aos="fade-right"
               data-aos-delay={300}
             >
@@ -32,7 +37,7 @@ const About = () => {
               data-aos="fade-right"
               data-aos-delay={400}
             >
-              Tech I Used for this Website:
+              Tech I Used for this Project:
             </h2>
             <div
               className="flex gap-4 px-2"
@@ -41,8 +46,8 @@ const About = () => {
             >
               <div className="w-[5px] bg-dark dark:bg-light opacity-20"></div>
               <img
-                src="https://skillicons.dev/icons?i=github,vite,nodejs,react,tailwind"
-                alt="Tech I Used for this Website:"
+                src="https://skillicons.dev/icons?i=figma,github,vite,nodejs,react,tailwind,markdown"
+                alt="Tech I Used for this Project:"
                 className="px-2"
               />
             </div>

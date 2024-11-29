@@ -37,7 +37,7 @@ const NavBar = () => {
       {/* ICON AND NAME */}
       <LinkScroll
         to="about"
-        className="cursor-pointer"
+        className="cursor-pointer hover:scale-105 transition ease-in-out delay-150"
         smooth={true}
         duration={500}
       >
@@ -58,7 +58,7 @@ const NavBar = () => {
       <ButtonContainer className="w-[9rem] h-[3rem] md:w-[10.5rem] md:h-[3.4rem] lg:w-[12rem] lg:h-[3.8rem] flex items-center justify-center gap-3">
         <button
           onClick={toggleTheme}
-          className="w-[3rem] h-[1.8rem] md:w-[3.5rem] md:h-[2rem] lg:w-[4rem] lg:h-[2.5rem] bg-[#DFDFDF] dark:bg-[#1A171A] rounded-full border-4 border-[#CACACA] dark:border-[#303030] flex items-center px-1"
+          className="w-[3rem] h-[1.8rem] md:w-[3.5rem] md:h-[2rem] lg:w-[4rem] lg:h-[2.5rem] bg-[#DFDFDF] dark:bg-[#1A171A] rounded-full border-4 border-[#CACACA] dark:border-[#303030] flex items-center px-1 hover:scale-105 transition ease-in-out delay-150"
         >
           <div
             className={`w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 rounded-full bg-[#808080] border-4 border-[#9A9A9A] ${
