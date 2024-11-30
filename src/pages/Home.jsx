@@ -41,7 +41,7 @@ export default function App() {
             </LinkScroll>
           </div>
 
-          <ElementScroll name="about" className="mt-10">
+          <ElementScroll name="about" className="mt-10 md:mt-36">
             <About />
           </ElementScroll>
 
