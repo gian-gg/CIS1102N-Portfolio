@@ -44,11 +44,11 @@ const About = () => {
               data-aos="fade-in"
               data-aos-delay={700}
             >
-              <div className="w-[5px] bg-dark dark:bg-light opacity-20"></div>
+              <div className="w-[5px] bg-dark dark:bg-light opacity-20" />
               <img
                 src="https://skillicons.dev/icons?i=figma,github,vite,nodejs,react,tailwind,markdown"
                 alt="Tech I Used for this Project:"
-                className="px-2"
+                className="px-2 h-9 md:h-full"
               />
             </div>
           </div>
@@ -65,7 +65,7 @@ const About = () => {
               data-aos="fade-in"
               data-aos-delay={800}
             >
-              <div className="w-[5px] bg-dark dark:bg-light opacity-20"></div>
+              <div className="w-[5px] bg-dark dark:bg-light opacity-20" />
               <div>
                 <p>Pagadian City Science High School (2017-2024)</p>
                 <p>University of San Carlos (2024-Present)</p>
