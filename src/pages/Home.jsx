@@ -14,9 +14,6 @@ import "aos/dist/aos.css";
 export default function App() {
   useEffect(() => {
     document.title = `CIS1102N | Home`;
-    if (document.documentElement.classList[0] == undefined) {
-      document.documentElement.classList.add("dark");
-    }
     AOS.init();
   }, []);
 

@@ -8,10 +8,17 @@ const NavBar = () => {
   const [isDarkTheme, setisDarkTheme] = useState(true);
 
   useEffect(() => {
-    document.documentElement.classList.add("dark");
-    document.documentElement.classList.remove("light");
-    setisDarkTheme(true);
-  }, []);
+    if (document.documentElement.classList[0] == undefined) {
+      document.documentElement.classList.add("dark");
+    }
+    console.log(document.documentElement.classList[0]);
+
+    if (document.documentElement.classList[0] == "dark") {
+      setisDarkTheme(true);
+    } else {
+      setisDarkTheme(false);
+    }
+  }, [isDarkTheme]);
 
   const toggleTheme = () => {
     if (isDarkTheme) {
