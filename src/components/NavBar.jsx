@@ -7,14 +7,10 @@ import SocialLinks from "./SocialLinks";
 const NavBar = () => {
   const [isDarkTheme, setisDarkTheme] = useState(true);
 
-  console.log("NAVBAR RENDERED");
-
   useEffect(() => {
-    if (document.documentElement.classList[0] == "dark") {
-      setisDarkTheme(true);
-    } else {
-      setisDarkTheme(false);
-    }
+    document.documentElement.classList.add("dark");
+    document.documentElement.classList.remove("light");
+    setisDarkTheme(true);
   }, []);
 
   const toggleTheme = () => {
