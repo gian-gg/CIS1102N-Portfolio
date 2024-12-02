@@ -80,7 +80,31 @@ const Hero = () => {
         <DisplaySubheading text="a compilation of" rotation="right" />
         <h1 className="font-pixelifySans text-[90px] md:text-[158px] lg:text-[220px] font-extrabold text-purpleL dark:text-purpleD leading-[5rem] md:leading-[8rem] lg:leading-[10rem] [text-shadow:_0_0px_256px_#A191B9]  dark:[text-shadow:_0_0px_256px_#CCC2DC]">
           {/* // https://pagedone.io/docs/text-shadow */}
-          CIS1102N
+          {/* TEMPORARY HOVER ANIMATION, JUST FOR FUNSIES */}
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out ">
+            C
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            I
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            S
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            1
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            1
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            0
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            2
+          </span>
+          <span className="hover:text-pink-100 hover:blur-lg transition ease-in-out">
+            N
+          </span>
         </h1>
         <DisplaySubheading text="portfolios." rotation="left" />
       </div>

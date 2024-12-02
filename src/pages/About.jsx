@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SocialLinks from "../components/SocialLinks";
 
 const About = () => {
@@ -26,9 +27,10 @@ const About = () => {
               <span className="line-through">Geri</span> Gian C. Epanto
             </h1>
             <p data-aos="fade-in" data-aos-delay={500}>
-              "reprehenderit officia nostrud pariatur anim aliquip mollit
-              officia aliquip ex nostrud labore adipisicing exercitation
-              proident"
+              Temporary website URL for progress report purposes:{" "}
+              <Link to="https://epanto.vercel.app/" target="_blank">
+                https://epanto.vercel.app/
+              </Link>
             </p>
           </div>
           <div>
