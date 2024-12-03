@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
-
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 
-import "../assets/md.css";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
-
 import Loading from "../components/Loading";
+
+import "../assets/md.css";
 
 const Portfolio = () => {
   const { number } = useParams();
@@ -40,12 +39,22 @@ const Portfolio = () => {
         <NavBar />
 
         <div className="w-screen max-w-[1510px] min-h-screen pt-20 px-4 md:px-20 lg:px-40">
-          <div className="markdown-container px-10 pb-10">
-            {content ? (
-              <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
-            ) : (
-              <Loading />
-            )}
+          <div className="bg-light rounded-xl h-full max-h-screen min-h-screen flex">
+            <div className="sidebar w-1/5 bg-black rounded-l-xl">
+              <div className="contents h-[400px] text-white">
+                <h1>On this Page:</h1>
+              </div>
+              <div className="references h-3/5 text-white">
+                <h1>References:</h1>
+              </div>
+            </div>
+            <div className="markdown-container w-4/5 overflow-y-auto">
+              {content ? (
+                <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
+              ) : (
+                <Loading />
+              )}
+            </div>
           </div>
           <div className="buttons flex justify-center my-8 gap-16">
             <Link
