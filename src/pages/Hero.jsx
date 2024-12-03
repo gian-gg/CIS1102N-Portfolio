@@ -113,7 +113,7 @@ const Hero = () => {
 
       {/* PORTFOLIO BUTTONS */}
       <div className="flex gap-4 mt-10 flex-col homeLG:flex-row">
-        {filesContent.length < 0 ? (
+        {filesContent.length > 0 ? (
           filesContent.map((file, index) => (
             <PortfolioContainer
               title={file.heading}
