@@ -113,7 +113,7 @@ const Hero = () => {
 
       {/* PORTFOLIO BUTTONS */}
       <div className="flex gap-4 mt-10 flex-col homeLG:flex-row">
-        {filesContent.length > 0 ? (
+        {filesContent.length < 0 ? (
           filesContent.map((file, index) => (
             <PortfolioContainer
               title={file.heading}
@@ -125,7 +125,7 @@ const Hero = () => {
           ))
         ) : (
           <div className="w-full flex justify-center">
-            <div className="w-12 h-12 animate-spin text-light text-6xl flex justify-center items-center align-middle">
+            <div className="w-12 h-12 animate-spin dark:text-light text-dark text-6xl flex justify-center items-center align-middle">
               <PiSpinnerGapDuotone />
             </div>
           </div>
