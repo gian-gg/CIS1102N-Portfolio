@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
+import { PiSpinnerGapDuotone } from "react-icons/pi";
+
 const PortfolioContainer = ({ title, to, number }) => {
   // AOS vs Hover Animations TRADE-OFF 💔💔
   return (
@@ -122,7 +124,11 @@ const Hero = () => {
             />
           ))
         ) : (
-          <p>Loading files...</p>
+          <div className="w-full flex justify-center">
+            <div className="w-12 h-12 animate-spin text-light text-6xl flex justify-center items-center align-middle">
+              <PiSpinnerGapDuotone />
+            </div>
+          </div>
         )}
       </div>
     </div>
