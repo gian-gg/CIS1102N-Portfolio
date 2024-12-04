@@ -145,8 +145,10 @@ const Portfolio = () => {
                     <NavButton number={parseInt(number) + 1} direction="next" />
                   </div>
                 </div>
-                <div className="hidden lg:flex p-4 w-[25rem] h-screen rounded-l-xl flex-col justify-between items-center align-middle">
-                  RIGHT
+                <div className="hidden lg:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
+                  <h1 className="font-poppins font-semibold text-lg text-dark dark:text-light">
+                    On This Page:
+                  </h1>
                 </div>
               </div>
             ) : (
