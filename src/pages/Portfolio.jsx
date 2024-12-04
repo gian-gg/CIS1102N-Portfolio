@@ -23,7 +23,9 @@ const NavButton = ({ direction, number }) => {
     <Link
       to={disabled ? "#" : `/${number}`}
       onClick={() => {
-        scroll.scrollToTop();
+        if (!disabled) {
+          scroll.scrollToTop();
+        }
       }}
       className={`h-14 w-36 md:h-16 md:w-40 bg-[#DFDFDF] dark:bg-[#19171A] rounded-2xl border-4 border-[#CACACA] dark:border-[#303030] flex justify-between items-center px-4 hover:opacity-60 ${
         disabled ? "cursor-not-allowed opacity-60" : ""
@@ -171,7 +173,7 @@ const Portfolio = () => {
                     <NavButton number={parseInt(number) + 1} direction="next" />
                   </div>
                 </div>
-                <div className="hidden lg:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
+                <div className="hidden xl:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
                   <h1 className="font-poppins font-semibold text-lg text-dark dark:text-light">
                     On This Page:
                   </h1>
