@@ -2,25 +2,31 @@
 
 /* Default (Dark Theme) */
 :root.light {
-  --text-color: #1a171a;
+  --text-color: #1c1c1c;
+  --bg-table-th: #f7fafc;
 }
 
 /* Light Theme */
 :root.dark {
-  --bg-text: #ffffff;
+  --text-text: #efefef;
+  --bg-table-th: #646464;
 }
 
 /* General styling for markdown content */
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-table {
-  color: var(--bg-text);
+.markdown-container h1,
+.markdown-container h2,
+.markdown-container h3,
+.markdown-container h4,
+.markdown-container h5,
+.markdown-container h6,
+.markdown-container p,
+.markdown-container table {
+  color: var(--text-text);
   font-family: "Poppins", sans-serif;
+}
+
+p {
+  text-align: justify;
 }
 
 .markdown-container h1,
@@ -128,7 +134,7 @@ table {
 }
 
 .markdown-container table th {
-  background-color: #f7fafc;
+  background-color: var(--bg-table-th);
   font-weight: bold;
 }
 

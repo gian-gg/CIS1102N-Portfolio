@@ -8,7 +8,36 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 
-import "../assets/md.css";
+import "../assets/index.css";
+
+const NavButton = ({ direction, number }) => {
+  const labelCSS = "text-dark dark:text-light";
+  const arrowCSS = `${labelCSS} font-pixelifySans text-2xl`;
+  let disabled = false;
+  if (number < 1 || number > 6) {
+    disabled = true;
+  }
+  return (
+    <Link
+      to={disabled ? "#" : `/${number}`}
+      className={`h-14 w-36 md:h-16 md:w-40 bg-[#DFDFDF] dark:bg-[#19171A] rounded-2xl border-4 border-[#CACACA] dark:border-[#303030] flex justify-between items-center px-4 hover:opacity-60 ${
+        disabled ? "cursor-not-allowed opacity-60" : ""
+      }`}
+    >
+      {direction === "next" ? (
+        <>
+          <p className={labelCSS}>Next</p>
+          <h1 className={arrowCSS}>{">"}</h1>
+        </>
+      ) : (
+        <>
+          <h1 className={arrowCSS}>{"<"}</h1>
+          <p className={labelCSS}>Previous</p>
+        </>
+      )}
+    </Link>
+  );
+};
 
 const Portfolio = () => {
   const { number } = useParams();
@@ -77,7 +106,7 @@ const Portfolio = () => {
             {content ? (
               <div className="flex">
                 <div className="hidden lg:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
-                  <h1 className="font-poppins font-extrabold text-2xl">
+                  <h1 className="font-poppins font-extrabold text-2xl text-dark dark:text-light">
                     Portfolios:
                   </h1>
                   <ul className="font-poppins flex flex-col gap-4">
@@ -103,11 +132,18 @@ const Portfolio = () => {
                     )}
                   </ul>
                 </div>
-                <div className="markdown-container w-full overflow-y-auto p-4">
-                  <ReactMarkdown
-                    children={content}
-                    remarkPlugins={[remarkGfm]}
-                  />
+                <div className="w-full overflow-y-auto p-4 flex flex-col items-center">
+                  <div className="markdown-container">
+                    <ReactMarkdown
+                      children={content}
+                      remarkPlugins={[remarkGfm]}
+                    />
+                  </div>
+                  <hr className="border-light w-4/5 mt-20" />
+                  <div className="buttons flex justify-center my-8 gap-16">
+                    <NavButton number={parseInt(number) - 1} direction="prev" />
+                    <NavButton number={parseInt(number) + 1} direction="next" />
+                  </div>
                 </div>
                 <div className="hidden lg:flex p-4 w-[25rem] h-screen rounded-l-xl flex-col justify-between items-center align-middle">
                   RIGHT
@@ -117,20 +153,6 @@ const Portfolio = () => {
               <Loading />
             )}
           </div>
-        </div>
-        <div className="buttons flex justify-center my-8 gap-16">
-          <Link
-            to={`/${parseInt(number) - 1}`}
-            className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
-          >
-            {"<"}
-          </Link>
-          <Link
-            to={`/${parseInt(number) + 1}`}
-            className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
-          >
-            {">"}
-          </Link>
         </div>
 
         {/* FOOTER */}
