@@ -140,7 +140,7 @@ const Portfolio = () => {
                       filesContent.map((file, index) => (
                         <li key={index}>
                           <NavLink
-                            to={`${index + 1}`}
+                            to={`/${index + 1}`}
                             className={({ isActive }) =>
                               `opacity-80 hover:dark:text-purpleD hover:text-purpleL font-medium hover:opacity-100 ${
                                 isActive
