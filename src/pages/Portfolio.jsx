@@ -41,21 +41,26 @@ const Portfolio = () => {
 
         <div className="w-full h-full px-4 md:px-20 mt-20">
           <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] max-h-screen flex border-4 border-gray">
-            <div className="hidden lg:flex p-4 w-1/5 h-screen rounded-l-xl flex-col justify-between items-center align-middle">
-              <div className="on-this-page h-1/2">
-                <h1>On this Page:</h1>
+            {content ? (
+              <div className="flex">
+                <div className="hidden lg:flex p-4 w-1/5 h-screen rounded-l-xl flex-col justify-between items-center align-middle">
+                  <div className="on-this-page h-1/2">
+                    <h1>On this Page:</h1>
+                  </div>
+                  <div className="references h-1/2">
+                    <h1>References:</h1>
+                  </div>
+                </div>
+                <div className="markdown-container w-full overflow-y-auto p-4">
+                  <ReactMarkdown
+                    children={content}
+                    remarkPlugins={[remarkGfm]}
+                  />
+                </div>
               </div>
-              <div className="references h-1/2">
-                <h1>References:</h1>
-              </div>
-            </div>
-            <div className="markdown-container w-full overflow-y-auto p-4">
-              {content ? (
-                <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
-              ) : (
-                <Loading />
-              )}
-            </div>
+            ) : (
+              <Loading />
+            )}
           </div>
         </div>
         <div className="buttons flex justify-center my-8 gap-16">
