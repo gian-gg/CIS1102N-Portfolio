@@ -33,7 +33,7 @@ const NavBar = () => {
   };
   return (
     <header
-      className="fixed w-full flex justify-between z-10 px-4 md:px-20 lg:px-40"
+      className="w-full sm:w-full md:w-4/5 fixed flex justify-between align-middle items-center z-10 px-4 lg:gap-8"
       data-aos="fade-down"
       data-aos-delay={300}
     >
@@ -44,7 +44,7 @@ const NavBar = () => {
         smooth={true}
         duration={500}
       >
-        <ButtonContainer className="w-[11.5rem] h-[3rem] md:w-[14rem] md:h-[3.375rem] lg:w-[16.5rem] lg:h-[3.75rem]">
+        <ButtonContainer className="  ">
           <div className="p-2 flex justify-center gap-3">
             <img
               src="./logo.png"
@@ -58,7 +58,7 @@ const NavBar = () => {
         </ButtonContainer>
       </LinkScroll>
       {/* OPTIONS */}
-      <ButtonContainer className="w-[9rem] h-[3rem] md:w-[10.5rem] md:h-[3.4rem] lg:w-[12rem] lg:h-[3.8rem] flex items-center justify-center gap-3">
+      <ButtonContainer className="flex w-[9rem] h-[3rem] md:w-[10.5rem] md:h-[3.4rem] lg:w-[12rem] lg:h-[3.8rem] items-center justify-center gap-3">
         <button
           onClick={toggleTheme}
           className="w-[3rem] h-[1.8rem] md:w-[3.5rem] md:h-[2rem] lg:w-[4rem] lg:h-[2.5rem] bg-[#DFDFDF] dark:bg-[#1A171A] rounded-full border-4 border-[#CACACA] dark:border-[#303030] flex items-center px-1 hover:scale-105 transition ease-in-out delay-150"

@@ -72,6 +72,7 @@ const Portfolio = () => {
           </div>
           {/* FOOTER */}
           <Footer />
+          ``
         </div>
       </div>
     </div>
