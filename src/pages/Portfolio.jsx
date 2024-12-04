@@ -99,7 +99,7 @@ const Portfolio = () => {
     <div className="w-full h-full bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center ">
       <div className="pt-4 flex flex-col items-center">
         {/* NAVBAR */}
-        <NavBar />
+        <NavBar page="portfolio" />
 
         <div className="w-full h-full px-4 md:px-20 mt-20">
           <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] max-h-screen flex border-4 border-gray">

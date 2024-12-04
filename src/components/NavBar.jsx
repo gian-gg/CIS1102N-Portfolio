@@ -1,10 +1,28 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
 import ButtonContainer from "./ButtonContainer";
 import SocialLinks from "./SocialLinks";
 
-const NavBar = () => {
+const FirstButton = () => {
+  return (
+    <ButtonContainer>
+      <div className="p-2 flex justify-center gap-3">
+        <img
+          src="./logo.png"
+          alt="icon"
+          className="w-[2.25rem] md:w-[2.5rem] lg:w-[2.75rem]"
+        />
+        <p className="font-pixelifySans text-dark dark:text-light text-xl md:text-2xl lg:text-3xl">
+          gian.epanto
+        </p>
+      </div>
+    </ButtonContainer>
+  );
+};
+
+const NavBar = ({ page = "home" }) => {
   const [isDarkTheme, setisDarkTheme] = useState(true);
 
   useEffect(() => {
@@ -31,6 +49,7 @@ const NavBar = () => {
       setisDarkTheme(true);
     }
   };
+
   return (
     <header
       className="w-full sm:w-full md:w-4/5 fixed flex justify-between align-middle items-center z-10 px-4 lg:gap-8"
@@ -38,25 +57,26 @@ const NavBar = () => {
       data-aos-delay={300}
     >
       {/* ICON AND NAME */}
-      <LinkScroll
-        to="about"
-        className="cursor-pointer hover:scale-105 transition ease-in-out delay-150"
-        smooth={true}
-        duration={500}
-      >
-        <ButtonContainer className="  ">
-          <div className="p-2 flex justify-center gap-3">
-            <img
-              src="./logo.png"
-              alt="icon"
-              className="w-[2.25rem] md:w-[2.5rem] lg:w-[2.75rem]"
-            />
-            <p className="font-pixelifySans text-dark dark:text-light text-xl md:text-2xl lg:text-3xl">
-              gian.epanto
-            </p>
-          </div>
-        </ButtonContainer>
-      </LinkScroll>
+      {page === "home" ? (
+        <LinkScroll
+          to="about"
+          className="cursor-pointer hover:scale-105 transition ease-in-out delay-150"
+          smooth={true}
+          duration={500}
+        >
+          <FirstButton />
+        </LinkScroll>
+      ) : (
+        <Link
+          to="/"
+          className="cursor-pointer hover:scale-105 transition ease-in-out delay-150"
+          smooth={true}
+          duration={500}
+        >
+          <FirstButton />
+        </Link>
+      )}
+
       {/* OPTIONS */}
       <ButtonContainer className="flex w-[9rem] h-[3rem] md:w-[10.5rem] md:h-[3.4rem] lg:w-[12rem] lg:h-[3.8rem] items-center justify-center gap-3">
         <button
