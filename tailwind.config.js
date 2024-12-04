@@ -17,6 +17,7 @@ export default {
         jetbrainsMono: ["Jetbrains Mono", "monospace"],
         gochiHand: ["Gochi Hand", "cursive"],
         pixelifySans: ["Pixelify Sans", "sans-serif"],
+        poppins: ["Poppins", "sans-serif"],
       },
       screens: {
         homeLG: "1480px",
