@@ -7,6 +7,7 @@ import remarkGfm from "remark-gfm";
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
+import ButtonContainer from "../components/ButtonContainer";
 
 import "../assets/md.css";
 
@@ -38,17 +39,17 @@ const Portfolio = () => {
         {/* NAVBAR */}
         <NavBar />
 
-        <div className="w-screen max-w-[1510px] min-h-screen pt-20 px-4 md:px-20 lg:px-40">
-          <div className="bg-light rounded-xl h-full max-h-screen min-h-screen flex">
-            <div className="sidebar w-1/5 bg-black rounded-l-xl">
-              <div className="contents h-[400px] text-white">
+        <div className="w-full h-full px-4 md:px-20 mt-20">
+          <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] max-h-screen flex border-4 border-gray">
+            <div className="hidden lg:flex p-4 w-1/5 h-screen rounded-l-xl flex-col justify-between items-center align-middle">
+              <div className="on-this-page h-1/2">
                 <h1>On this Page:</h1>
               </div>
-              <div className="references h-3/5 text-white">
+              <div className="references h-1/2">
                 <h1>References:</h1>
               </div>
             </div>
-            <div className="markdown-container w-4/5 overflow-y-auto">
+            <div className="markdown-container w-full overflow-y-auto p-4">
               {content ? (
                 <ReactMarkdown children={content} remarkPlugins={[remarkGfm]} />
               ) : (
@@ -56,24 +57,24 @@ const Portfolio = () => {
               )}
             </div>
           </div>
-          <div className="buttons flex justify-center my-8 gap-16">
-            <Link
-              to={`/${parseInt(number) - 1}`}
-              className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
-            >
-              {"<"}
-            </Link>
-            <Link
-              to={`/${parseInt(number) + 1}`}
-              className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
-            >
-              {">"}
-            </Link>
-          </div>
-          {/* FOOTER */}
-          <Footer />
-          ``
         </div>
+        <div className="buttons flex justify-center my-8 gap-16">
+          <Link
+            to={`/${parseInt(number) - 1}`}
+            className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
+          >
+            {"<"}
+          </Link>
+          <Link
+            to={`/${parseInt(number) + 1}`}
+            className="font-pixelifySans text-dark dark:text-light text-2xl font-extrabold w-10 h-10 rounded-full bg-[#B9B9B9] dark:bg-gray flex items-center justify-center"
+          >
+            {">"}
+          </Link>
+        </div>
+
+        {/* FOOTER */}
+        <Footer />
       </div>
     </div>
   );
