@@ -2,6 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Link as LinkScroll } from "react-scroll";
 
+import useDetectScroll from "@smakss/react-scroll-direction";
+
 import ButtonContainer from "./ButtonContainer";
 import SocialLinks from "./SocialLinks";
 
@@ -23,6 +25,18 @@ const FirstButton = () => {
 };
 
 const NavBar = ({ page = "home" }) => {
+  const [showNavBar, setShowNavBar] = useState(false);
+  const scrollDirection = useDetectScroll();
+
+  useEffect(() => {
+    if (scrollDirection.scrollDir === "down") {
+      setShowNavBar(true);
+    } else {
+      setShowNavBar(false);
+    }
+    console.log(scrollDirection.scrollDir);
+  }, [scrollDirection, showNavBar]);
+
   const [isDarkTheme, setisDarkTheme] = useState(true);
 
   useEffect(() => {
@@ -52,9 +66,9 @@ const NavBar = ({ page = "home" }) => {
 
   return (
     <header
-      className="w-full sm:w-full md:w-4/5 fixed flex justify-between align-middle items-center z-10 px-4 lg:gap-8"
-      data-aos="fade-down"
-      data-aos-delay={300}
+      className={`animate-fade-down w-full sm:w-full md:w-4/5 fixed flex justify-between align-middle items-center z-10 px-4 lg:gap-8 transition duration-150 ${
+        showNavBar ? "-translate-y-[150%]" : ""
+      }`}
     >
       {/* ICON AND NAME */}
       {page === "home" ? (
