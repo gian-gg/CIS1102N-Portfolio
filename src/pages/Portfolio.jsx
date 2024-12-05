@@ -128,10 +128,10 @@ const Portfolio = () => {
         <NavBar page="portfolio" />
 
         <div className="w-full h-full px-4 md:px-20 mt-20 max-w-[1510px]">
-          <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] screen flex border-4 border-gray">
+          <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full w-full min-h-[580px] screen flex border-4 border-gray">
             {content ? (
-              <div className="flex">
-                <div className="hidden lg:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
+              <div className="w-full flex justify-between">
+                <div className="w-1/5 xl:w-[25rem] hidden lg:flex gap-4 rounded-l-xl flex-col p-8 py-10">
                   <h1 className="font-poppins font-extrabold text-2xl text-dark dark:text-light">
                     Portfolios:
                   </h1>
@@ -158,14 +158,13 @@ const Portfolio = () => {
                     )}
                   </ul>
                 </div>
-                <div className="w-full p-4 flex flex-col items-center">
-                  <div className="markdown-container">
+                <div className="w-full lg:w-4/5 p-4 flex flex-col items-center">
+                  <div className="markdown-container min-h-[25rem]">
                     <ReactMarkdown
                       children={content}
                       remarkPlugins={[remarkGfm]}
                       rehypePlugins={[rehypeSlug]}
                     />
-                    ;
                   </div>
                   <hr className="border-light w-4/5 mt-20" />
                   <div className="buttons flex justify-center my-8 gap-16">
@@ -173,7 +172,7 @@ const Portfolio = () => {
                     <NavButton number={parseInt(number) + 1} direction="next" />
                   </div>
                 </div>
-                <div className="hidden xl:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
+                <div className="w-[25rem] hidden xl:flex gap-4 rounded-l-xl flex-col p-8 py-10">
                   <h1 className="font-poppins font-semibold text-lg text-dark dark:text-light">
                     On This Page:
                   </h1>

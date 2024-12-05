@@ -4,12 +4,20 @@
 :root.light {
   --text-color: #1c1c1c;
   --bg-table-th: #f7fafc;
+  --active: #beacda;
+  --accent: #dedede;
 }
 
 /* Light Theme */
 :root.dark {
-  --text-text: #efefef;
+  --text-color: #efefef;
   --bg-table-th: #646464;
+  --active: #a191b9;
+  --accent: #19171a;
+}
+
+.markdown-container {
+  overflow: scroll;
 }
 
 /* General styling for markdown content */
@@ -20,19 +28,33 @@
 .markdown-container h5,
 .markdown-container h6,
 .markdown-container p,
-.markdown-container table {
-  color: var(--text-text);
+.markdown-container table,
+.markdown-container li {
+  color: var(--text-color);
   font-family: "Poppins", sans-serif;
   text-align: justify;
 }
 
-.markdown-container h1,
+.markdown-container li {
+  list-style-type: disc;
+}
+
+strong {
+  color: var(--active);
+}
+
+.markdown-container h1 {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
 .markdown-container h2,
 .markdown-container h3,
 .markdown-container h4,
 .markdown-container h5,
 .markdown-container h6 {
-  margin-top: 20px;
+  margin-top: 60px;
   margin-bottom: 10px;
   font-weight: bold;
 }
@@ -62,6 +84,10 @@
   font-weight: normal;
 }
 
+.markdown-container p {
+  text-indent: 0.5in;
+}
+
 .markdown-container p,
 .markdown-container table th,
 .markdown-container table td {
@@ -72,8 +98,8 @@
 .markdown-container blockquote {
   padding: 15px;
   margin: 20px 0;
-  background-color: #f7fafc;
-  border-left: 4px solid #6b46c1;
+  background-color: var(--accent);
+  border-left: 4px solid var(--active);
   font-style: italic;
 }
 
@@ -124,12 +150,13 @@
   width: 100%;
   border-collapse: collapse;
   margin-top: 20px;
+  overflow: scroll;
 }
 
 .markdown-container table th,
 .markdown-container table td {
   padding: 8px;
-  border: 1px solid #e2e8f0;
+  border: 1px solid var(--text-color);
 }
 
 .markdown-container table th {
@@ -137,12 +164,13 @@
   font-weight: bold;
 }
 
-.markdown-container table td {
-  text-align: left;
+.markdown-container table td,
+th {
+  text-align: center;
 }
 
 .markdown-container a {
-  color: #3182ce;
+  color: var(--active);
   text-decoration: none;
 }
 
