@@ -130,7 +130,7 @@ const Portfolio = () => {
         <NavBar page="portfolio" />
 
         <div className="w-full h-full px-4 md:px-20 mt-20">
-          <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] max-h-screen flex border-4 border-gray">
+          <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] screen flex border-4 border-gray">
             {content ? (
               <div className="flex">
                 <div className="hidden lg:flex gap-4 w-[22rem] rounded-l-xl flex-col p-8 py-10">
@@ -180,13 +180,14 @@ const Portfolio = () => {
                   <ul className="font-poppins flex flex-col gap-4">
                     {onThisPage.headings && onThisPage.headings.length > 0 ? (
                       onThisPage.headings.map((heading, index) => {
-                        const id = heading.toLowerCase().replace(/\s+/g, "-");
+                        const id = heading.toLowerCase().split(" ")[1];
+
                         return (
                           <li key={index}>
                             <LinkScroll
                               to={id}
                               smooth={true}
-                              className="text-dark dark:text-light opacity-80 hover:dark:text-purpleD hover:text-purpleL font-medium hover:opacity-100"
+                              className="text-dark dark:text-light opacity-80 hover:dark:text-purpleD hover:text-purpleL font-medium hover:opacity-100 cursor-pointer"
                             >
                               <ReactMarkdown>{heading}</ReactMarkdown>
                             </LinkScroll>
