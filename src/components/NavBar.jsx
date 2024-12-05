@@ -66,7 +66,7 @@ const NavBar = ({ page = "home" }) => {
 
   return (
     <header
-      className={`animate-fade-down w-full sm:w-full md:w-4/5 fixed flex justify-between align-middle items-center z-10 px-4 lg:gap-8 transition duration-150 ${
+      className={`animate-fade-down w-full sm:w-full md:w-4/5 max-w-[1430px] fixed flex justify-between align-middle items-center z-10 px-4 lg:gap-8 transition duration-150 ${
         showNavBar ? "-translate-y-[150%]" : ""
       }`}
     >

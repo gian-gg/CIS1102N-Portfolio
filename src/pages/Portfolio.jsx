@@ -10,8 +10,6 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 
-import "../assets/index.css";
-
 const NavButton = ({ direction, number }) => {
   const labelCSS = "text-dark dark:text-light";
   const arrowCSS = `${labelCSS} font-pixelifySans text-2xl`;
@@ -27,7 +25,7 @@ const NavButton = ({ direction, number }) => {
           scroll.scrollToTop();
         }
       }}
-      className={`h-14 w-36 md:h-16 md:w-40 bg-[#DFDFDF] dark:bg-[#19171A] rounded-2xl border-4 border-[#CACACA] dark:border-[#303030] flex justify-between items-center px-4 hover:opacity-60 ${
+      className={`h-14 w-36 md:h-16 md:w-40 bg-[#DFDFDF] dark:bg-[#19171A] rounded-2xl border-4 border-[#CACACA] dark:border-[#303030] flex justify-between items-center px-4 hover:lg:opacity-60 ${
         disabled ? "cursor-not-allowed opacity-60" : ""
       }`}
     >
@@ -124,12 +122,12 @@ const Portfolio = () => {
   }, [number]);
 
   return (
-    <div className="w-full h-full bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center ">
+    <div className="w-full h-full min-h-screen bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center">
       <div className="pt-4 flex flex-col items-center">
         {/* NAVBAR */}
         <NavBar page="portfolio" />
 
-        <div className="w-full h-full px-4 md:px-20 mt-20">
+        <div className="w-full h-full px-4 md:px-20 mt-20 max-w-[1510px]">
           <div className="bg-light dark:bg-dark border-opacity-30 dark:border-opacity-100 rounded-xl h-full min-h-[580px] screen flex border-4 border-gray">
             {content ? (
               <div className="flex">
@@ -160,7 +158,7 @@ const Portfolio = () => {
                     )}
                   </ul>
                 </div>
-                <div className="w-full overflow-y-auto p-4 flex flex-col items-center">
+                <div className="w-full p-4 flex flex-col items-center">
                   <div className="markdown-container">
                     <ReactMarkdown
                       children={content}

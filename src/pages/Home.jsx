@@ -18,7 +18,7 @@ export default function App() {
   }, []);
 
   return (
-    <div className="w-full h-full bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center ">
+    <div className="w-full min-h-screen h-full bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center ">
       <div className="pt-4 flex flex-col items-center">
         {/* NAVBAR */}
         <NavBar />
