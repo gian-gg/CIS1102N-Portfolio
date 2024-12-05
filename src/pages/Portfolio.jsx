@@ -4,7 +4,7 @@ import { Link, NavLink } from "react-router-dom";
 import { Link as LinkScroll, animateScroll as scroll } from "react-scroll";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
-import remarkCustomHeaderId from "remark-custom-header-id";
+import rehypeSlug from "rehype-slug";
 
 import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
@@ -70,8 +70,8 @@ const Portfolio = () => {
 
   const [filesContent, setFilesContent] = useState([]);
   const [onThisPage, setOnThisPage] = useState({
-    headings: [], // Initialize with an empty array
-    content: "", // Initialize with an empty string
+    headings: [],
+    content: "",
   });
 
   const markdownFiles = [
@@ -164,8 +164,10 @@ const Portfolio = () => {
                   <div className="markdown-container">
                     <ReactMarkdown
                       children={content}
-                      remarkPlugins={[remarkGfm, remarkCustomHeaderId]}
+                      remarkPlugins={[remarkGfm]}
+                      rehypePlugins={[rehypeSlug]}
                     />
+                    ;
                   </div>
                   <hr className="border-light w-4/5 mt-20" />
                   <div className="buttons flex justify-center my-8 gap-16">
