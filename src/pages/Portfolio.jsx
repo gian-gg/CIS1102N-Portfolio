@@ -182,7 +182,12 @@ const Portfolio = () => {
                   <ul className="font-poppins flex flex-col gap-4">
                     {onThisPage.headings && onThisPage.headings.length > 0 ? (
                       onThisPage.headings.map((heading, index) => {
-                        const id = heading.toLowerCase().split(" ")[1];
+                        const id = heading
+                          .toLowerCase()
+                          .slice(1)
+                          .replace(/[^a-zA-Z0-9\s]+/g, "")
+                          .trim()
+                          .replace(/\s+/g, "-");
 
                         return (
                           <li key={index}>
