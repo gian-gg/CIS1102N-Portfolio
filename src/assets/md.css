@@ -43,40 +43,44 @@ strong {
   color: var(--active);
 }
 
-.markdown-container h1 {
-  margin-top: 20px;
-  margin-bottom: 10px;
-  font-weight: bold;
+em {
+  text-decoration: underline;
 }
 
+.markdown-container h1,
 .markdown-container h2,
 .markdown-container h3,
 .markdown-container h4,
 .markdown-container h5,
 .markdown-container h6 {
-  margin-top: 60px;
   margin-bottom: 10px;
   font-weight: bold;
 }
 
 .markdown-container h1 {
   font-size: 2.25rem;
+  text-align: center;
+  margin-top: 20px;
 }
 
 .markdown-container h2 {
   font-size: 1.875rem;
+  margin-top: 40px;
 }
 
 .markdown-container h3 {
   font-size: 1.5rem;
+  margin-top: 30px;
 }
 
 .markdown-container h4 {
   font-size: 1.25rem;
+  margin-top: 10px;
 }
 
 .markdown-container h5 {
   font-size: 1.125rem;
+  margin-top: 5px;
 }
 
 .markdown-container h6 {
@@ -289,6 +293,20 @@ th {
 
 @media (max-width: 480px) {
   /* Smaller mobile */
+
+  .markdown-container li {
+    font-size: 12px;
+  }
+
+  .markdown-container blockquote p {
+    font-size: 12px;
+  }
+
+  .markdown-container table th,
+  .markdown-container table td {
+    font-size: 12px;
+  }
+
   .markdown-container h1 {
     font-size: 1.5rem;
   }
@@ -313,11 +331,7 @@ th {
     font-size: 0.625rem;
   }
 
-  .markdown-container p {
-    font-size: 0.75rem;
-  }
-
   .markdown-container .image-container img {
-    max-width: 100%;
+    max-width: 80%;
   }
 }
