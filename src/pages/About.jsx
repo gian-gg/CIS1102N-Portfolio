@@ -28,8 +28,9 @@ const About = () => {
             </h1>
             <p data-aos="fade-in" data-aos-delay={500}>
               “Computers have always been my passion. I love problem-solving and
-              exploring new technologies, making Computer Science the perfect
-              field to fuel my curiosity.”
+              exploring new technologies, making{" "}
+              <span className="font-gochiHand text-2xl">Computer Science</span>{" "}
+              the perfect field to fuel my curiosity.”
             </p>
           </div>
           <div>
