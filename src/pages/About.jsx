@@ -27,15 +27,14 @@ const About = () => {
               <span className="line-through">Geri</span> Gian C. Epanto
             </h1>
             <p data-aos="fade-in" data-aos-delay={500}>
-              Temporary website URL for progress report purposes:{" "}
-              <Link to="https://epanto.vercel.app/" target="_blank">
-                https://epanto.vercel.app/
-              </Link>
+              “Computers have always been my passion. I love problem-solving and
+              exploring new technologies, making Computer Science the perfect
+              field to fuel my curiosity.”
             </p>
           </div>
           <div>
             <h2
-              className="font-pixelifySans font-semibold text-2xl md:text-3xl text-purpleL dark:text-purpleD"
+              className="font-pixelifySans font-semibold text-xl md:text-3xl text-purpleL dark:text-purpleD"
               data-aos="fade-right"
               data-aos-delay={400}
             >
@@ -50,13 +49,13 @@ const About = () => {
               <img
                 src="https://skillicons.dev/icons?i=figma,github,vite,nodejs,react,tailwind,markdown"
                 alt="Tech I Used for this Project:"
-                className="px-2 h-9 md:h-full"
+                className="px-2 h-8 md:h-full"
               />
             </div>
           </div>
           <div>
             <h2
-              className="font-pixelifySans font-semibold text-2xl md:text-3xl text-purpleL dark:text-purpleD"
+              className="font-pixelifySans font-semibold text-xl md:text-3xl text-purpleL dark:text-purpleD"
               data-aos="fade-right"
               data-aos-delay={500}
             >
