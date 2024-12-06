@@ -51,13 +51,14 @@ const Portfolio = () => {
   const [content, setContent] = useState("");
 
   useEffect(() => {
-    if (!number || isNaN(number) || number < 1 || number > 6) {
+    if (!number || isNaN(number) || number < 1 || number > 7) {
       navigate("/");
     }
   }, [number, navigate]);
 
   useEffect(() => {
-    document.title = `CIS1102N | Portfolio #${number}`;
+    document.title =
+      number === "7" ? `CIS1102N | Hosting` : `CIS1102N | Portfolio #${number}`;
 
     fetch(`/portfolios/${number}.md`)
       .then((response) => response.text())
@@ -132,31 +133,55 @@ const Portfolio = () => {
             {content ? (
               <div className="w-full flex justify-between">
                 <div className="w-1/5 xl:w-[25rem] hidden lg:flex gap-4 rounded-l-xl flex-col p-8 py-10">
-                  <h1 className="font-poppins font-extrabold text-2xl text-dark dark:text-light">
-                    Portfolios:
-                  </h1>
-                  <ul className="font-poppins flex flex-col gap-4">
-                    {filesContent.length > 0 ? (
-                      filesContent.map((file, index) => (
-                        <li key={index}>
-                          <NavLink
-                            to={`/${index + 1}`}
-                            className={({ isActive }) =>
-                              `opacity-80 hover:dark:text-purpleD hover:text-purpleL font-medium hover:opacity-100 ${
-                                isActive
-                                  ? "text-purpleL dark:text-purpleD opacity-100"
-                                  : "text-dark dark:text-light"
-                              }`
-                            }
-                          >
-                            {file.heading}
-                          </NavLink>
-                        </li>
-                      ))
-                    ) : (
-                      <Loading />
-                    )}
-                  </ul>
+                  <div className="portfolio-navigation">
+                    <h1 className="font-poppins font-extrabold text-2xl text-dark dark:text-light">
+                      Portfolios:
+                    </h1>
+                    <ul className="font-poppins flex flex-col gap-4">
+                      {filesContent.length > 0 ? (
+                        filesContent.map((file, index) => (
+                          <li key={index}>
+                            <NavLink
+                              to={`/${index + 1}`}
+                              className={({ isActive }) =>
+                                `opacity-80 hover:dark:text-purpleD hover:text-purpleL font-medium hover:opacity-100 ${
+                                  isActive
+                                    ? "text-purpleL dark:text-purpleD opacity-100"
+                                    : "text-dark dark:text-light"
+                                }`
+                              }
+                            >
+                              {file.heading}
+                            </NavLink>
+                          </li>
+                        ))
+                      ) : (
+                        <Loading />
+                      )}
+                    </ul>
+                  </div>
+                  <div className="additional-content">
+                    {/* This Part is Hardcoded kay kapoy, this section is only for fun */}
+                    <h1 className="font-poppins font-extrabold text-2xl text-dark dark:text-light">
+                      Additional Content:
+                    </h1>
+                    <ul>
+                      <li>
+                        <NavLink
+                          to={`/7`}
+                          className={({ isActive }) =>
+                            `opacity-80 hover:dark:text-purpleD hover:text-purpleL font-medium hover:opacity-100 ${
+                              isActive
+                                ? "text-purpleL dark:text-purpleD opacity-100"
+                                : "text-dark dark:text-light"
+                            }`
+                          }
+                        >
+                          HOSTING ON DCISM.ORG
+                        </NavLink>
+                      </li>
+                    </ul>
+                  </div>
                 </div>
                 <div className="w-full lg:w-4/5 p-4 flex flex-col items-center">
                   <div className="markdown-container min-h-[25rem]">
