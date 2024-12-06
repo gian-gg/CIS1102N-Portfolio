@@ -4,7 +4,7 @@
 :root.light {
   --text-color: #1c1c1c;
   --bg-table-th: #f7fafc;
-  --active: #beacda;
+  --active: #a191b9;
   --accent: #dedede;
 }
 
@@ -12,7 +12,7 @@
 :root.dark {
   --text-color: #efefef;
   --bg-table-th: #646464;
-  --active: #a191b9;
+  --active: #beacda;
   --accent: #19171a;
 }
 
