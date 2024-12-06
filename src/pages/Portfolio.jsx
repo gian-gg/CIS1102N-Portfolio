@@ -192,7 +192,7 @@ const Portfolio = () => {
                     />
                   </div>
                   <hr className="border-light w-4/5 mt-20" />
-                  <div className="buttons flex justify-center my-8 gap-16">
+                  <div className="buttons flex justify-center my-8 gap-4 md:gap-16">
                     <NavButton number={parseInt(number) - 1} direction="prev" />
                     <NavButton number={parseInt(number) + 1} direction="next" />
                   </div>
