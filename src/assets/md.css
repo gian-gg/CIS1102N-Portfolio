@@ -16,10 +16,6 @@
   --accent: #19171a;
 }
 
-.markdown-container {
-  overflow: scroll;
-}
-
 /* General styling for markdown content */
 .markdown-container h1,
 .markdown-container h2,
@@ -290,6 +286,7 @@ th {
   .markdown-container table th,
   .markdown-container table td {
     padding: 5px;
+    font-size: 12px;
   }
 }
 
@@ -306,7 +303,7 @@ th {
 
   .markdown-container table th,
   .markdown-container table td {
-    font-size: 12px;
+    font-size: 8px;
   }
 
   .markdown-container h1 {
