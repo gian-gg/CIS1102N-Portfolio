@@ -151,6 +151,9 @@ const Portfolio = () => {
                                 }`
                               }
                             >
+                              <span className="font-pixelifySans text-purpleD text-xl">
+                                [{index + 1}]
+                              </span>{" "}
                               {file.heading}
                             </NavLink>
                           </li>
