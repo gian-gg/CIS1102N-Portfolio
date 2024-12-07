@@ -12,6 +12,7 @@
   "dependencies": {
     "@smakss/react-scroll-direction": "^4.2.0",
     "aos": "^2.3.4",
+    "express": "^4.21.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-icons": "^5.3.0",
@@ -35,5 +36,27 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "vite": "^5.4.10"
-  }
+  },
+  "description": "This project fulfills a requirement for the CIS1102N course, compiling all portfolios into a centralized documentation website.",
+  "main": "server.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gian-gg/CIS1102N-Portfolio.git"
+  },
+  "keywords": [
+    "modern",
+    "minimalism",
+    "gamify",
+    "documentation",
+    "page",
+    "intro-to-computing",
+    "usc",
+    "course"
+  ],
+  "author": "gian-gg",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gian-gg/CIS1102N-Portfolio/issues"
+  },
+  "homepage": "https://github.com/gian-gg/CIS1102N-Portfolio#readme"
 }
