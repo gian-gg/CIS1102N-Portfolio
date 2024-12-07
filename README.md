@@ -14,6 +14,7 @@ Soon: https://epanto.dcism.org
     - react-scroll
     - react-markdown
     - remark-gfm
+    - rehype-slug
     - aos
 
 ## License
