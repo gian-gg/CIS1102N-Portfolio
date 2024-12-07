@@ -10,6 +10,8 @@ import NavBar from "../components/NavBar";
 import Footer from "../components/Footer";
 import Loading from "../components/Loading";
 
+import { MdOutlineFileDownload } from "react-icons/md";
+
 const NavButton = ({ direction, number }) => {
   const labelCSS = "text-dark dark:text-light";
   const arrowCSS = `${labelCSS} font-pixelifySans text-2xl`;
@@ -122,6 +124,14 @@ const Portfolio = () => {
     fetchH2();
   }, [number]);
 
+  // download portfolio
+
+  let fileExtension = number > 4 ? "pdf" : "pptx";
+
+  const fileName = `Epanto-G6-CIS1102N-Portfolio${number}.${fileExtension}`;
+
+  const fileURL = `/downloads/${fileName}`;
+
   return (
     <div className="w-full h-full min-h-screen bg-light dark:bg-dark bg-[url('../assets/images/bg/bgLight.png')] dark:bg-[url('../assets/images/bg/bgDark.png')] bg-repeat-y bg-center">
       <div className="pt-4 flex flex-col items-center">
@@ -194,7 +204,21 @@ const Portfolio = () => {
                       rehypePlugins={[rehypeSlug]}
                     />
                   </div>
-                  <hr className="border-light w-4/5 mt-20" />
+                  {number < 7 ? (
+                    <div className="h-6 w-full mt-10 px-4 flex justify-center">
+                      <a
+                        href={fileURL}
+                        download={fileName}
+                        className="font-pixelifySans text-dark dark:text-light text-2xl md:text-4xl hover:dark:text-purpleD hover:text-purpleL flex gap-2  justify-center align-middle items-center"
+                      >
+                        DOWNLOAD PORTFOLIO
+                        <MdOutlineFileDownload />
+                      </a>
+                    </div>
+                  ) : (
+                    <></>
+                  )}
+                  <hr className="border-light w-4/5 mt-10" />
                   <div className="buttons flex justify-center my-8 gap-4 md:gap-16">
                     <NavButton number={parseInt(number) - 1} direction="prev" />
                     <NavButton number={parseInt(number) + 1} direction="next" />
