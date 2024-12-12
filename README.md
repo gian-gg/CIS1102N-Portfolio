@@ -1,4 +1,4 @@
-## Project Overview
+# CIS1102N Portfolio
 
 This project fulfills a requirement for the CIS1102N course, compiling all portfolios into a centralized documentation website. Designed with modern principles, it aims to provide clear navigation and accessibility for users.
 
@@ -19,9 +19,7 @@ This project fulfills a requirement for the CIS1102N course, compiling all portf
     - rehype-slug
     - aos
 
-# Deploying on DCISM Servers
-
-## Steps to Deploy:
+## Deploying on DCISM Servers
 
 ### 1. SSH
 - Connect to the DCISM Servers using SSH.
@@ -33,6 +31,9 @@ ssh -p22077 s<usc_id>@web.dcism.org
 
 ### 2. Clone the Repository
 - Navigate to your subdomain directory.
+```
+cd <subdomain_name>.dcism.org
+```
 - Clone your project repository.
 ```
 git clone <clone_link> .
